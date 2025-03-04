@@ -1,0 +1,67 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background : #f8f9fa;
+
+}
+.drop-zone {
+    border: 2px dashed var(--bs-dark);
+    padding: 30px 20px;
+    text-align: center;
+    margin: 20px 0;
+    border-radius: 30px;
+}
+.history-item {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+.imagePreviewCard {
+    display: flex;
+    height: 100%;
+}
+
+.imagePreviewCard img {
+    float: left;
+    width: 50px;
+}
+
+.imagePreviewCard .file_info {
+    width: 100%;
+    display: block;
+    margin-left: 5px;
+    min-width: 120px;
+}
+
+#previewImageItems {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.imagePreviewCard .file_info > small {
+    display: block;
+    width: 100% !important;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 12px;
+}
+
+.imagePreviewCard .file_info span, .imagePreviewCard .file_info a {
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.sticky-top {
+    top: 0;
+    position: -webkit-sticky;
+    position: sticky;
+}
+
+.toast-container {
+    z-index: 999999999;
+}
