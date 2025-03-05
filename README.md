@@ -30,7 +30,7 @@
 - 💸 **Free Forever**: No subscriptions or hidden fees
 - 🛡️ **Privacy First**: Your files never leave your device
 - 📱 **Device-Friendly**: Works flawlessly on mobile, tablet, and desktop
-- 🚫 **No Annoyances**: Zero ads, trackers, or registration walls
+- 🚫 **No Annoyances**: Zero trackers, or registration walls
 
 ---
 
