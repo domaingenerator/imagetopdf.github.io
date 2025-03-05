@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--
+    PDF to Image Converter
+    @author A.I Raju
+    @version 1.0
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF to Image Converter: Convert Unlimited PDF to Image Online Free</title>
+    <meta name="description" content="Convert PDF files to high-quality images online for free. Supports multiple PDF files, bulk conversion, and various image formats like JPG, PNG. No registration required." />
+    <meta name="keywords" content="pdf to image, pdf to jpg, pdf to png, convert pdf to image, pdf converter, free pdf converter, online pdf converter, pdf to image converter" />
+    <meta name="author" content="A.I Raju" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta property="og:title" content="PDF to Image Converter - Free Online PDF to Image Conversion Tool" />
+    <meta property="og:description" content="Convert PDF files to high-quality images online for free. Easy to use, no registration required. Convert multiple PDFs to JPG/PNG instantly." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/static/images/pdf-to-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PDF to Image Converter - Free Online PDF to Image Conversion Tool" />
+    <meta name="twitter:description" content="Convert PDF files to high-quality images online for free. Easy to use, no registration required. Convert multiple PDFs to JPG/PNG instantly." />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="canonical" href="https://imagetopdf.github.io/pdf-to-image.html" />
+
+    <link rel="icon" href="/static/images/favicon.png" type="image/png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+         * {padding: 0;margin: 0;box-sizing: border-box;font-family: 'Poppins', sans-serif;}body{background : #f8f9fa;}.drop-zone {border: 2px dashed var(--bs-dark);border-radius: 10px;padding: 20px;text-align: center;transition: all 0.3s ease;}.drop-zone.dragover {background: #e9ecef;border-color: #0d6efd;}.image-card{padding: 10px;max-width: 160px;margin: auto;text-align: center;border-radius: 15px;}.image-card img {width: 100%;background: #eee;}.card-btn {position: relative;float: right;margin-top: -30px;margin-bottom: 0px;}.card-btn button {border-radius: 50%;font-size: 12px;background: #eee;border: 1px solid #ccc;color: #666;}.image-card .file-name {white-space: break-spaces;font-weight: normal;font-size: 12px;margin: 0px;margin-top: 5px;text-align: left;}#previewImages {max-height: 540px;overflow-y: auto;}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/"><img src="/static/images/android-icon-96x96.png" alt="ImageToPDF logo" style="width:32px;height:32px;"/> ImageToPDF<small class="text-secondary">.Github</small></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><i class="bi bi-house-fill"></i> Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-tools"></i> Tools
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/"><i class="bi bi-file-earmark-pdf-fill"></i> Image to PDF</a></li>
+                            <li><a class="dropdown-item" href="/pdf-to-image.html"><i class="bi bi-file-earmark-image-fill"></i> PDF to Image</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.freeprivacypolicy.com/live/0cca7966-ada5-44c4-83ad-94357f029746"><i class="bi bi-shield-lock-fill"></i> Privacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.freeprivacypolicy.com/live/b41e2109-1bfc-44fc-a4b9-e1fb4c398e89"><i class="bi bi-file-earmark-text-fill"></i> Terms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://forms.gle/r6t4SRMVW3KPwseT9"><i class="bi bi-envelope-fill"></i> Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <h1 class="text-center fs-4 mb-4 fw-bold">PDF to Image Converter</h1>
+        <div class="drop-zone mb-4 bg-warning bg-opacity-50" id="dropZone">
+            <div class="mb-1">
+                <i class="bi bi-filetype-pdf text-dark mb-0" style="font-size: 45px;"></i>
+            </div>
+            <p class="mb-2 fw-bold">Drag & Drop PDF files here or</p>
+            <input type="file" id="fileInput" accept=".pdf" multiple class="d-none">
+            <button class="btn btn-danger rounded-1 shadow-sm" id="fileInputBtn" onclick="document.getElementById('fileInput').click()">
+               <i class="bi bi-upload me-2"></i> Select Files
+            </button>
+        </div>
+        <div id="convertingStatus"></div>
+        <div class="card shadow-sm bg-white border rounded-3 d-none" id="previewCard" >
+            <div class="card-header bg-white text-dark d-inline-flex justify-content-between border-bottom">
+                <h3 class="card-title fw-bold fs-6 m-0">Total Images <span class="convertedImageCount">0</span></h3>
+                <button class="btn btn-success btn-sm shadow-sm rounded-1" onclick="showToast('<b>Download</b> has been started... Please Wait.', 'success')" id="downloadBtn" style="display: none;">
+                    <i class="bi bi-download"></i> Download All Images (ZIP)
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="row row-cols-2 row-cols-sm-auto m-auto justify-content-center g-2" id="previewImages"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container py-4">
+        <article class="bg-white p-4 rounded-3 shadow-sm">
+            <h2 class="fs-4 mb-3">PDF to Image Converter: A Free Online Tool</h2>
+            <p>Convert your PDF documents into high-quality images with our <a href="/">free online PDF to Image converter</a>. Whether you need to extract images from PDF files or create individual image files for each page, our tool makes the process simple and efficient.</p>
+
+            <h3 class="fs-5 mt-4">Key Features</h3>
+            <ul>
+                <li>Convert multiple PDF files simultaneously</li>
+                <li>Supports JPG and PNG output formats</li>
+                <li>No registration required</li>
+                <li>Fast and secure processing</li>
+                <li>Download results as ZIP file</li>
+            </ul>
+
+            <h3 class="fs-5 mt-4">How to Convert PDF to Image</h3>
+            <ol>
+                <li>Drag and drop your PDF file(s) into the conversion area</li>
+                <li>Wait for the conversion process to complete</li>
+                <li>Download individual images or get all images in a ZIP file</li>
+            </ol>
+
+            <div class="mt-4">
+                <p>Need to convert images to PDF instead? Try our <a href="/">Image to PDF converter</a>.</p>
+                <p>For more document conversion tools, visit <a href="https://www.adobe.com/acrobat/online/pdf-to-jpg.html" rel="nofollow">Adobe's conversion suite</a>.</p>
+            </div>
+
+            <h3 class="fs-5 mt-4">Frequently Asked Questions</h3>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h4 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            Is this service really free?
+                        </button>
+                    </h4>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, our PDF to Image converter is completely free with no hidden charges.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h4 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            What image formats are supported?
+                        </button>
+                    </h4>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Currently, we support conversion to JPG and PNG formats.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.7.107/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="/static/js/pdftoimage.min.js?v=1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <footer class="bg-white text-dark py-5 mt-5 shadow">
+        <div class="container">
+            <div class="text-center text-light-50">
+                <p class="mb-0 text-muted">&copy; 2025 <b>imagetopdf.github.io</b>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+     
+        ym(98253558, "init", {
+             clickmap:true,
+             trackLinks:true,
+             accurateTrackBounce:true
+        });
+     </script>
+     <noscript><div><img src="https://mc.yandex.ru/watch/98253558" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+     <!-- /Yandex.Metrika counter -->
+</body>
+</html>
